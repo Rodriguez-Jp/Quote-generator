@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import QuoteMsg from "./QuoteMsg";
 
-const Quote = () => {
+const Quote = ({ randomButton }) => {
   const API_URL = import.meta.env.VITE_API_URL;
   const [loading, setLoading] = useState(false);
   const [quote, setQuote] = useState({});
@@ -23,7 +23,7 @@ const Quote = () => {
       }
     }
     getQuote();
-  }, []);
+  }, [randomButton]);
 
   const handleClickAuthor = async () => {
     setShowAutorQuotes(true);
